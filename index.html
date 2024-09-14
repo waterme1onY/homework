@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸运数字页面</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #00ff00;
+        }
+        header {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 30px;
+            background-color: #333;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            font-size: 1rem;
+            padding: 50px;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #444;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>页面执行中...</header>
+    <main>你的幸运数: 正在计算...</main>
+    <footer><a href="#" onclick="window.close()">点击关闭此弹窗</a></footer>
+
+    <script>
+        // 设置页面高度
+        const bodyElement = document.body;
+        bodyElement.style.height = `${window.innerHeight - 18}px`;
+    
+        // 生成随机幸运数
+        const luckyNumber = Math.floor(Math.random() * 100);
+        const mainElement = document.querySelector('main');
+        mainElement.textContent = `你的幸运数字: ${luckyNumber}`;
+        console.log(`幸运数字是: ${luckyNumber}`);
+    
+        // 记录脚本开始时间
+        const startTime = new Date();
+    
+        // 模拟计算任务
+        const startTimer = new Date();
+        for (let i = 0; i < 1e8; i++) {}
+        console.log(`模拟计算耗时: ${(new Date() - startTimer)} ms`);
+    
+        // 显示页面加载完成时间
+        const headerElement = document.querySelector('header');
+        headerElement.textContent = `页面加载完成, 总耗时: ${(new Date() - startTime)} ms`;
+    </script>
+</body>
+</html>
